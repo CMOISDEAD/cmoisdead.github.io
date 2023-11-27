@@ -11,6 +11,8 @@ const blog = defineCollection({
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		status: z.enum(["draft", "published"]).default("draft"),
+		subtitle: z.string().optional().nullable(),
+		subcontent: z.array(z.string()).optional().default([]),
 	}),
 });
 
@@ -20,6 +22,9 @@ const wiki = defineCollection({
 		description: z.string(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
+		status: z.enum(["draft", "published"]).default("draft"),
+		subtitle: z.string().optional().nullable(),
+		subcontent: z.array(z.string()).optional().default([]),
 	}),
 });
 
@@ -29,6 +34,11 @@ const projects = defineCollection({
 		description: z.string(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
+		status: z
+			.enum(["complete", "in-progress", "planned", "abandoned"])
+			.default("planned"),
+		subtitle: z.string().optional().nullable(),
+		subcontent: z.array(z.string()).optional().default([]),
 	}),
 });
 
@@ -39,7 +49,10 @@ const research = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		associatedPapers: z.array(z.string()),
+		status: z.enum(["draft", "published"]).default("draft"),
 		asociation: z.string().optional(),
+		subtitle: z.string().optional().nullable(),
+		subcontent: z.array(z.string()).optional().default([]),
 	}),
 });
 

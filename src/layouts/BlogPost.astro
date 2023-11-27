@@ -6,7 +6,15 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Toc from "../components/Toc.astro";
 
 const { data, headings } = Astro.props;
-const { title, description, pubDate, updatedDate, status } = data;
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	status,
+	subtitle,
+	subcontent,
+} = data;
 ---
 
 <html lang="en">
@@ -38,25 +46,16 @@ const { title, description, pubDate, updatedDate, status } = data;
 						</div>
 						<div class="flex gap-4 justify-between mt-4">
 							<Toc headings={headings} />
-							<div class="w-1/2 text-sm">
-								<h3>Introduction</h3>
-								<p>
-									I recently wanted to set up a Jupyter notebook server on my
-									home desktop and serve it from my website. This would allow me
-									to edit Python scripts from my laptop and run them on my
-									beefier home hardware remotely. Setting this up was
-									unfortunately not as straight forward as I would’ve hoped, so
-									I’m outlining this process to make things easier for others
-									getting started.
-								</p>
-								<p>
-									Before moving forward, identify the machine you’d like your
-									notebook server to run on. For me, this was my home desktop
-									where I have otherwise unused compute power sitting around.
-									Perhaps instead you’d like to set up the notebook server on a
-									web server that you already rent to host your website.
-								</p>
-							</div>
+							{
+								subtitle && (
+									<div class="w-1/2 text-sm">
+										<h3>{subtitle}</h3>
+										{subcontent.map((item) => (
+											<p>{item}</p>
+										))}
+									</div>
+								)
+							}
 						</div>
 					</div>
 					<slot />

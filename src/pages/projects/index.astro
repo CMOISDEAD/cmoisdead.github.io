@@ -1,5 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
 ---
 
 <Layout>
@@ -9,5 +14,14 @@ import Layout from "../../layouts/Layout.astro";
       This page includes a list of personal projects I've developed/am
       developing in my free-time.
     </p>
+    <ul>
+      {
+        projects.map((item) => (
+          <li>
+            <a href={`/projects/${item.slug}`}>{item.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Layout>

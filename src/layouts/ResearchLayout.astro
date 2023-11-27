@@ -1,0 +1,67 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Toc from "../components/Toc.astro";
+
+const { data, headings } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  status,
+  subtitle,
+  subcontent,
+} = data;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="dark:bg-zinc-950 dark:text-white">
+    <Header />
+    <main
+      class="container mx-auto prose max-w-3xl prose-zinc dark:prose-invert"
+    >
+      <article>
+        <div class="my-4">
+          <div class="border-b-2 border-zinc-800 pb-4">
+            <h1 class="m-0">{title}</h1>
+            <p class="italic">{description}</p>
+            <div class="italic text-zinc-500 text-sm">
+              <div class="flex gap-2 m-0">
+                created at: <FormattedDate date={pubDate} />
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
+              <p class="m-0">status: {status}</p>
+            </div>
+            <div class="flex gap-4 justify-between mt-4">
+              <Toc headings={headings} />
+              {
+                subtitle && (
+                  <div class="w-1/2 text-sm">
+                    <h3 class="m-0">{subtitle}</h3>
+                    {subcontent.map((item) => (
+                      <p>{item}</p>
+                    ))}
+                  </div>
+                )
+              }
+            </div>
+          </div>
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

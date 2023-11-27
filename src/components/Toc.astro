@@ -1,5 +1,5 @@
 ---
-import type { MarkdownHeading } from 'astro';
+import type { MarkdownHeading } from "astro";
 
 type Props = {
   headings: MarkdownHeading[];
@@ -21,7 +21,11 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 }, [] as HeadingWithSubheadings[]);
 ---
 
-<nav id="table-of-contents" aria-label="Table Of Contents" class="text-xs border border-white bg-zinc-900 w-1/2 px-3 py-1 my-2">
+<nav
+  id="table-of-contents"
+  aria-label="Table Of Contents"
+  class="flex-grow text-xs border border-white bg-zinc-900 px-3 py-1 my-2"
+>
   <ol>
     {
       grouppedHeadings.map((h) => (
