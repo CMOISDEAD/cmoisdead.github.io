@@ -1,0 +1,20 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header class="border-b border-gray-800/20 dark:border-slate-200/20 p-3">
+	<nav class="flex justify-between content-center items-center gap-4">
+		<h2 class=" flex-grow"><a href="/">{SITE_TITLE}</a></h2>
+		<div class="flex gap-4 justify-center">
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/projects">Projects</HeaderLink>
+			<HeaderLink href="/wiki">Wiki</HeaderLink>
+			<HeaderLink href="/researches">Researches</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+		</div>
+		<div class="flex gap-4 italic text-gray-500 flex-grow justify-end text-xs">
+			"Neolithic"
+		</div>
+	</nav>
+</header>

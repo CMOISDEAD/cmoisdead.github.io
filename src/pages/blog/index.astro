@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import CardPost from "../../components/CardPost.astro";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+---
+
+<Layout>
+	<section>
+		<ul class="list-none grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-4">
+			{
+				posts.map((post) => (
+					<li>
+						<CardPost post={post} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Layout>

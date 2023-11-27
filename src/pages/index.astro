@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Blogs from "../components/home/blogs.astro";
+import Wiki from "../components/home/wiki.astro";
+---
+
+<Layout>
+	<div>
+		<p>
+			Welcome to Camilo's CS Chronicles, a hub where the wonders of computer
+			science meet the thrill of academic exploration. This blog is my personal
+			canvas where I decode the intricate world of code, algorithms, and
+			scientific discoveries.
+		</p>
+		<p>
+			Expect a journey filled with fascinating discussions, deep dives into
+			research, and musings on the latest in CS and scientific advancements.
+			It's where I navigate the complexities of technology while unraveling the
+			mysteries of academia. Join me in this exhilarating expedition as we
+			explore the captivating realms of tech, research, and all things academic!
+		</p>
+	</div>
+	<div class="flex gap-4 justify-between content-center">
+		<div class="w-full">
+			<h1 class="border-b-2 border-zinc-800 mb-0">Blog</h1>
+			<Blogs />
+		</div>
+		<div class="w-full">
+			<h1 class="border-b-2 border-zinc-800 mb-0">Wiki</h1>
+			<Wiki />
+		</div>
+	</div>
+	<div>
+		<h1 class="border-b-2 border-zinc-800 mb-0">Projects</h1>
+	</div>
+</Layout>
