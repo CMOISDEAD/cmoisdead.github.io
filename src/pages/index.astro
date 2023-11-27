@@ -23,16 +23,22 @@ import Projects from "../components/home/projects.astro";
 	</div>
 	<div class="flex gap-4 justify-between content-center">
 		<div class="w-full">
-			<h1 class="border-b-2 border-zinc-800 mb-0">Blog</h1>
+			<a href="/blog" class="no-underline">
+				<h1 class="border-b-2 border-zinc-800 mb-0">Blog</h1>
+			</a>
 			<Blogs />
 		</div>
 		<div class="w-full">
-			<h1 class="border-b-2 border-zinc-800 mb-0">Wiki</h1>
+			<a href="/wiki" class="no-underline">
+				<h1 class="border-b-2 border-zinc-800 mb-0">Wiki</h1>
+			</a>
 			<Wiki />
 		</div>
 	</div>
 	<div>
-		<h1 class="border-b-2 border-zinc-800 mb-0">Projects</h1>
+		<a href="/projects" class="no-underline">
+			<h1 class="border-b-2 border-zinc-800 mb-0">Projects</h1>
+		</a>
 		<Projects />
 	</div>
 </Layout>
