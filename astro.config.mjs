@@ -17,4 +17,8 @@ export default defineConfig({
       },
     },
   ],
+  markdown: {
+    remarkPlugins: ["remark-math"],
+    rehypePlugins: ["rehype-katex"],
+  },
 });

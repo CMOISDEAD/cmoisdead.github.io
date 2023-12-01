@@ -53,6 +53,7 @@ const research = defineCollection({
 		asociation: z.string().optional(),
 		subtitle: z.string().optional().nullable(),
 		subcontent: z.array(z.string()).optional().default([]),
+		link: z.string().optional(),
 	}),
 });
 

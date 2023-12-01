@@ -1,5 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const researches = (await getCollection("research")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
 ---
 
 <Layout>
@@ -10,5 +15,14 @@ import Layout from "../../layouts/Layout.astro";
       including work done independently as well as projects for university
       courses.
     </p>
+    <ul>
+      {
+        researches.map((item) => (
+          <li>
+            <a href={`/researches/${item.slug}`}>{item.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Layout>

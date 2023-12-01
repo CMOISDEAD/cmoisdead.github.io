@@ -16,9 +16,13 @@ const wiki = (await getCollection("wiki")).sort(
       being useful at some point in the future.
     </p>
     <ul>
-      {wiki.map((item) => <li>
-      <a href={`/wiki/${item.slug}`}>{item.data.title}</a>
-      </li>)}
+      {
+        wiki.map((item) => (
+          <li>
+            <a href={`/wiki/${item.slug}`}>{item.data.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </Layout>
