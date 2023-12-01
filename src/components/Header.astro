@@ -5,7 +5,15 @@ import { SITE_TITLE } from "../consts";
 
 <header class="border-b border-gray-800/20 dark:border-slate-200/20 p-3">
 	<nav class="flex justify-between content-center items-center gap-4">
-		<h2 class="flex-grow"><a href="/">{SITE_TITLE}</a></h2>
+		<h2 class="flex-grow">
+			<a href="/" class="flex gap-2 content-center items-center">
+				<img
+					src="https://thenounproject.com/api/private/icons/1002376/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0"
+					alt="mf doom"
+					class="invert w-8 m-0"
+				/>
+			</a>
+		</h2>
 		<div class="flex gap-4 justify-center">
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/projects" class="hidden lg:block">Projects</HeaderLink>
@@ -17,7 +25,7 @@ import { SITE_TITLE } from "../consts";
 		<div
 			class="hidden md:flex gap-4 italic text-gray-500 flex-grow justify-end text-xs"
 		>
-			"Neolithic"
+			{SITE_TITLE}
 		</div>
 	</nav>
 </header>
