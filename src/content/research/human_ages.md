@@ -10,7 +10,8 @@ subcontent:
     "That was my questions for a long time, and this paper is just an attempt to answer it (for me).",
     "I'm not an historian, so im not sure if the information here is correct, but i hope it is, and if not, please, let me know.",
   ]
-link: "/docs/researches/human_ages.pdf"
+link: ""
+# link: "/docs/researches/human_ages.pdf"
 ---
 
 ## Disclaimer
