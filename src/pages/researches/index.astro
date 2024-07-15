@@ -15,7 +15,7 @@ const researches = (await getCollection("research")).sort(
       including work done independently as well as projects for university
       courses.
     </p>
-    <ul>
+    <ul transition:name="research">
       {
         researches.map((item) => (
           <li>

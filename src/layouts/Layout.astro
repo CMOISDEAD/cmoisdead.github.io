@@ -10,9 +10,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="dark:bg-zinc-950 dark:text-white">
+	<body class="flex flex-col min-h-screen dark:bg-zinc-950 dark:text-white">
 		<Header />
-		<main class="container mx-auto my-5 prose max-w-3xl dark:prose-invert">
+		<main
+			class="container mx-auto my-5 prose max-w-3xl flex-grow dark:prose-invert"
+		>
 			<slot />
 		</main>
 		<Footer />

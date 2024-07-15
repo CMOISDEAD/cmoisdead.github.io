@@ -15,7 +15,7 @@ const wiki = (await getCollection("wiki")).sort(
       and generally serve as informal collections of knowledge that I anticipate
       being useful at some point in the future.
     </p>
-    <ul>
+    <ul transition:name="wiki">
       {
         wiki.map((item) => (
           <li>

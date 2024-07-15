@@ -7,12 +7,18 @@ const projects = (await getCollection("projects"))
   .reverse();
 ---
 
-<ul class="list-decimal">
+<ul class="list-decimal" transition:name="project">
   {
     projects.map((project) => (
-      <li class="my-0">
-        <a href={`/projects/${project.slug}/`} class="flex justify-between content-center">
-          {project.data.title},  <span class="border border-dashed text-xs p-1">{project.data.status}</span>
+      <li class="my-1">
+        <a
+          href={`/projects/${project.slug}/`}
+          class="flex justify-between content-center"
+        >
+          {project.data.title},{" "}
+          <span class="text-xs">
+            {project.data.status}
+          </span>
         </a>
       </li>
     ))

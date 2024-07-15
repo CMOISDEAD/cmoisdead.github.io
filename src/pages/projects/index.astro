@@ -14,7 +14,7 @@ const projects = (await getCollection("projects")).sort(
       This page includes a list of personal projects I've developed/am
       developing in my free-time.
     </p>
-    <ul>
+    <ul transition:name="project">
       {
         projects.map((item) => (
           <li>

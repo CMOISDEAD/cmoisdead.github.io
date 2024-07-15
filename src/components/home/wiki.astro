@@ -7,7 +7,7 @@ const wiki = (await getCollection("wiki"))
   .reverse();
 ---
 
-<ul>
+<ul transition:name="wiki">
   {
     wiki.map((item) => (
       <li class="my-0">

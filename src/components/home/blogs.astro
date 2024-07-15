@@ -7,7 +7,7 @@ const posts = (await getCollection("blog"))
   .reverse();
 ---
 
-<ul class="list-decimal">
+<ul class="list-decimal" transition:name="blog">
   {
     posts.map((post) => (
       <li class="my-0">
